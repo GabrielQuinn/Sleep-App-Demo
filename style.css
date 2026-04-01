@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+:root {
+    --primary-bg-color: #160E30;
+    --primary-bg-grad: #2d133b;
+    --secondary-bg-color: #4b2259;
+    --alt-a: #C73984;
+    --alt-b: #c557ed;
+    --alt-b-grad: #f571f0;
+    --secondary-text-color: #FFE4ED;
+    --primary-text-color: #ffffff;
+}
+
+* {
+    color: var(--primary-text-color);
+    padding: 0;
+    margin: 0;
+    font-family: "Outfit", serif;
+    transition: all 0.3s;
+}
+
+body {
+    /*background-color: var(--primary-bg-color);*/
+    background-image: linear-gradient(45deg, var(--primary-bg-color), var(--primary-bg-grad));
+    background-size: contain;
+    height: 100%;
+    min-height: 100vh;
+}
+
+nav, nav > section, nav ul {
+    display: flex;
+    flex-direction: row;
+}
+
+nav, footer {
+    width: 100%;
+    /*background-color: var(--alt-b);*/
+    background-size: contain;
+}
+
+nav {
+    justify-content: space-between;
+    background-image: linear-gradient(45deg, var(--alt-b), var(--alt-b-grad));
+    border-bottom: 0.1em solid var(--primary-text-color);
+    margin-bottom: 0.5em;
+}
+
+nav > section {
+    padding: 0.5em;
+}
+
+nav > section:first-of-type, nav ul {
+    gap: 1em;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    font-weight: bold;
+}
+
+a:hover {
+    color: var(--secondary-text-color);
+}
+
+body > section:first-of-type {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 0.5em;
+}
+
+body > section:first-of-type > section {
+    background-color: var(--secondary-bg-color);
+    border: none;
+    border-radius: 1em;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+.header {
+    text-align: center;
+}
+
+.header > * {
+    margin: 0.2em;
+}
+
+.overview {
+    padding: 1.5em 0.5em 1.5em 0.5em !important;
+}
+
+.overview ul, .stats ul {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    text-align: center;
+    gap: 0.8em;
+}
+
+.overview ul strong, .stats ul strong {
+    font-weight: normal;
+    color: var(--secondary-text-color);
+}
+
+.overview li {
+    font-weight: bold;
+}
+
+.overview ul li:last-of-type {
+    grid-column: 1 / span 2;
+}
+
+.stats, .timeline, .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stats h4, .timeline h4, .profile h4 {
+    width: 100%;
+}
+
+.stats button, .timeline button, .profile button {
+    width: 50%;
+}
+
+.stats ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 0.6em;
+}
+
+.stats li {
+    background-color: var(--primary-bg-color);
+    border-radius: 0.5em;
+    border-bottom: 0.1em solid var(--secondary-text-color);
+}
+
+.stats li h2 {
+    font-size: 1.2em;
+}
+
+.stats img {
+    width: 20em;
+}
+
+.timeline ul {
+    display: grid;
+    grid-template-columns: repeat(2, 2fr);
+    gap: 0.8em;
+    margin-bottom: 0.8em;
+}
+
+.timeline h5 {
+    font-size: 1.4em;
+}
+
+.profile {
+    gap: 0.5em;
+}
+
+.profile ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+button {
+    background-color: var(--alt-a);
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.5em;
+    font-weight: bold;
+    border-bottom: 0.1em solid var(--primary-text-color);
+}
+
+button:hover {
+    background-color: var(--alt-b-grad);
+}
+
+button > a {
+    text-decoration: none;
+}
+
+h4 {
+    color: var(--secondary-text-color);
+    font-size: 1.4em;
+    border-bottom: 0.1em solid var(--secondary-text-color);
+    margin-bottom: 0.5em;
+}
+
+footer {
+    background-color: var(--secondary-bg-color);
+    text-align: center;
+    padding: 0.4em 0;
+}
+
+@media (min-width: 768px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    body > section:first-of-type {
+        width: 70%;
+    }
+    .stats ul {
+        display: grid;
+        grid-template-columns: repeat(2, 2fr);
+        gap: 0.8em;
+    }
+    .timeline ul {
+        gap: 2em;
+    }
+}
